@@ -1,3 +1,22 @@
+def åpne_fil():
+    list = []
+    with open("redhood.txt", "r") as file:
+        content = file.read()
+        list.append(content)
+
+    print(list)
+
+def main():
+    valg = int(input("vil du se hele teksten skriv 1 eller søke etter ord i teksten trykk 2: "))
+    if valg == 1:
+        åpne_fil()
+    
+    elif valg == 2:
+        search_string()
+    
+    else:
+        print("velg 1 eller 2.")
+
 def search_string():
     try:
         with open("redhood.txt", "r") as file:
@@ -9,11 +28,6 @@ def search_string():
     except FileNotFoundError:
         return "Error: The file 'redhood.txt' was not found."
     
-def åpne_textfil(text_fil):
-    text_fil = []
-    with open("redhood.txt", "r") as file:
-        for line in file:
-            text_fil.append(line.strip())
     
 
 def count_string(content, search_term):
@@ -37,4 +51,7 @@ def finn_linje(search_term):
         return "Error: The file 'redhood.txt' was not found."
     
     
-search_string()
+main()
+
+#fikse none
+#splitte opp søke funk
